@@ -4,32 +4,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Single Frame</title>
+<title>Two Minutes of Digital Awareness</title>
+
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
 body{
-margin:0;
-padding:10px;
-background:#080e1c;
+  margin:0;
+  background:#081525;
+  color:white;
+  font-family:Arial,sans-serif;
 }
+
+.page{
+  max-width:1000px;
+  margin:auto;
+  padding:15px;
+}
+
+header{
+  text-align:center;
+  padding:20px;
+}
+
+header h1{
+  color:#42d9ff;
+  font-size:26px;
+}
+
+header p{
+  color:#c1d0df;
+}
+
+.graph{
+  height:110px;
+  background:#142b42;
+  border-radius:12px;
+  display:flex;
+  align-items:end;
+  justify-content:space-around;
+  padding:12px;
+}
+
+.graph span{
+  width:12%;
+  background:linear-gradient(#42d9ff,#1675d1);
+  border-radius:5px 5px 0 0;
+}
+
+.graph span:nth-child(1){height:35%}
+.graph span:nth-child(2){height:55%}
+.graph span:nth-child(3){height:75%}
+.graph span:nth-child(4){height:45%}
+.graph span:nth-child(5){height:95%}
+
+.frames{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px;
+}
+
 .frame{
-width:100%;
-height:95vh;
-border:2px solid #263b5d;
-border-radius:12px;
-overflow:hidden;
+  background:#142b42;
+  border-radius:10px;
+  overflow:hidden;
 }
+
+.frame h3{
+  text-align:center;
+  color:#42d9ff;
+  padding:10px;
+  margin:0;
+  font-size:14px;
+}
+
 iframe{
-width:100%;
-height:100%;
-border:0;
-display:block;
+  width:100%;
+  height:350px;
+  border:0;
+  background:white;
+  display:block;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#91a9be;
+  font-size:12px;
+}
+
+/* EDUCATIONAL COVER */
+
+#overlay{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:rgba(3,10,22,.97);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  overflow-y:auto;
+}
+
+.poster{
+  width:100%;
+  max-width:560px;
+  background:#11243a;
+  border:2px solid #315574;
+  border-radius:17px;
+  padding:23px;
+  position:relative;
+  box-shadow:0 15px 60px #000;
+}
+
+/* TRANSPARENT CLOSE BUTTON */
+
+.close{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:35px;
+  height:35px;
+  border:0;
+  background:transparent;
+  color:#ffffff;
+  font-size:30px;
+  font-weight:normal;
+  cursor:pointer;
+  padding:0;
+  line-height:35px;
+}
+
+.label{
+  color:#42d9ff;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.poster h1{
+  font-size:28px;
+  line-height:1.25;
+  margin:12px 0;
+  color:white;
+}
+
+.intro{
+  color:#e0eaf3;
+  font-size:16px;
+  line-height:1.6;
+}
+
+.timer{
+  text-align:center;
+  background:#1a3550;
+  padding:12px;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+#clock{
+  font-size:38px;
+  font-weight:bold;
+  color:#42d9ff;
+  font-variant-numeric:tabular-nums;
+}
+
+.section{
+  margin:13px 0;
+  padding:14px;
+  border-radius:10px;
+  background:#172d43;
+}
+
+.section h2{
+  font-size:18px;
+  margin:0 0 10px;
+}
+
+.section p{
+  font-size:15px;
+  line-height:1.65;
+  color:#e0eaf3;
+  margin:8px 0;
+}
+
+.warning h2{
+  color:#ff8585;
+}
+
+.trusted h2{
+  color:#61e3a5;
+}
+
+.note{
+  font-size:13px;
+  line-height:1.6;
+  color:#c1d0df;
+}
+
+.continue{
+  width:100%;
+  padding:15px;
+  background:#168ac5;
+  color:white;
+  border:0;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:12px;
+}
+
+.continue:hover{
+  background:#20a7e8;
+}
+
+@media(max-width:600px){
+
+  .poster{
+    padding:17px;
+  }
+
+  .poster h1{
+    font-size:23px;
+  }
+
+  .frames{
+    grid-template-columns:1fr;
+  }
+
+  iframe{
+    height:300px;
+  }
 }
 </style>
 </head>
+
 <body>
-<div class="frame">
-<iframe src="https://lltrco.com/?r=mahmoudyoussef20"></iframe>
+
+<!-- MAIN PAGE -->
+
+<div class="page">
+
+<header>
+<h1>YOUR TWO MINUTES MATTER</h1>
+<p>Learn. Discover. Protect Yourself.</p>
+</header>
+
+<div class="graph">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
 </div>
+
+<!-- TWO FRAMES LOAD IMMEDIATELY -->
+
+<div class="frames">
+
+<div class="frame">
+<h3>LEARNING WINDOW 01</h3>
+
+<iframe
+src="https://lltrco.com/?r=mahmoudyoussef20"
+loading="eager">
+</iframe>
+
+</div>
+
+<div class="frame">
+<h3>LEARNING WINDOW 02</h3>
+
+<iframe
+src="https://lltrco.com/?r=mahmoudyoussef2024"
+loading="eager">
+</iframe>
+
+</div>
+
+</div>
+
+<footer>
+Small Moments. Big Possibilities.
+</footer>
+
+</div>
+
+<!-- EDUCATIONAL POSTER -->
+
+<div id="overlay">
+
+<div class="poster">
+
+<!-- TRANSPARENT X -->
+
+<button class="close"
+onclick="closePoster()"
+aria-label="Close">&times;</button>
+
+<div class="label">
+2-MINUTE DIGITAL SAFETY LESSON
+</div>
+
+<h1>STOP! THINK BEFORE YOU TRUST.</h1>
+
+<p class="intro">
+Two minutes of knowledge can protect your
+money, your privacy, and your future.
+Learn to recognize suspicious websites.
+</p>
+
+<div class="timer">
+<div class="label">YOUR LEARNING TIME</div>
+<div id="clock">02:00</div>
+</div>
+
+<div class="section warning">
+
+<h2>🚩 4 WARNING SIGNS</h2>
+
+<p>1. Guaranteed profits with no risk.</p>
+<p>2. Requests for money before paying you.</p>
+<p>3. Fake reviews and unrealistic promises.</p>
+<p>4. No real company identity or contact details.</p>
+
+</div>
+
+<div class="section trusted">
+
+<h2>✓ 4 BETTER TRUST SIGNALS</h2>
+
+<p>1. Official government websites with verified domains.</p>
+<p>2. Apps listed in official Google Play or Apple stores.</p>
+<p>3. Companies with independently verified details.</p>
+<p>4. Clear privacy, payment and refund policies.</p>
+
+</div>
+
+<p class="note">
+REMEMBER: HTTPS and a professional-looking
+website do not guarantee that a site is safe.
+Always check its identity and reputation independently.
+</p>
+
+<div class="label" style="text-align:center">
+THINK FIRST. VERIFY ALWAYS.
+</div>
+
+<button class="continue" onclick="closePoster()">
+CONTINUE TO THE LEARNING PAGE
+</button>
+
+</div>
+</div>
+
+<!-- TWO-MINUTE COUNTDOWN -->
+
+<script>
+
+let seconds = 120;
+
+const clock = document.getElementById("clock");
+
+function tick(){
+
+  let minutes = Math.floor(seconds / 60);
+  let secs = seconds % 60;
+
+  clock.textContent =
+    String(minutes).padStart(2,"0") + ":" +
+    String(secs).padStart(2,"0");
+
+  if(seconds > 0){
+    seconds--;
+  }else{
+    clearInterval(timer);
+    clock.textContent = "00:00";
+  }
+}
+
+tick();
+
+const timer = setInterval(tick,1000);
+
+/* CLOSE ONLY WHEN VISITOR CLICKS */
+
+function closePoster(){
+  document.getElementById("overlay").style.display = "none";
+}
+
+</script>
+
 </body>
 </html>
