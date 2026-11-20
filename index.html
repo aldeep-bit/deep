@@ -121,7 +121,7 @@ footer{
   box-shadow:0 15px 60px #000;
 }
 
-/* TRANSPARENT CLOSE BUTTON */
+/* CLOSE BUTTON - SAME COLOR AS POSTER */
 
 .close{
   position:absolute;
@@ -131,7 +131,7 @@ footer{
   height:35px;
   border:0;
   background:transparent;
-  color:#ffffff;
+  color:#11243a;
   font-size:30px;
   font-weight:normal;
   cursor:pointer;
@@ -264,7 +264,7 @@ footer{
 <span></span>
 </div>
 
-<!-- TWO FRAMES LOAD IMMEDIATELY -->
+<!-- TWO FRAMES -->
 
 <div class="frames">
 
@@ -301,8 +301,6 @@ Small Moments. Big Possibilities.
 <div id="overlay">
 
 <div class="poster">
-
-<!-- TRANSPARENT X -->
 
 <button class="close"
 onclick="closePoster()"
@@ -364,7 +362,7 @@ CONTINUE TO THE LEARNING PAGE
 </div>
 </div>
 
-<!-- TWO-MINUTE COUNTDOWN -->
+<!-- COUNTDOWN -->
 
 <script>
 
@@ -392,8 +390,6 @@ function tick(){
 tick();
 
 const timer = setInterval(tick,1000);
-
-/* CLOSE ONLY WHEN VISITOR CLICKS */
 
 function closePoster(){
   document.getElementById("overlay").style.display = "none";
